@@ -1,185 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Templates Store</title>
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Templates Store</title>
 
-  <body>
-    <!-- Navbar -->
-    <header class="navbar">
-      <h1>🌐 Web Templates</h1>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <!-- Search Form -->
-      <form class="search-bar" role="search">
-        <label for="searchInput" class="visually-hidden"
-          >Search templates</label
-        >
-        <input
-          type="search"
-          id="searchInput"
-          name="q"
-          placeholder="Search templates..."
-        />
-        <button type="submit" aria-label="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>🌐 Web Templates</h1>
 
-      <!-- Menu Toggle -->
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
+    <!-- Search Form -->
+    <form class="search-bar" role="search">
+      <label for="searchInput" class="visually-hidden">Search templates</label>
+      <input type="search" id="searchInput" name="q" placeholder="Search templates..." />
+      <button type="submit" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
       </button>
+    </form>
 
-      <!-- Navigation Links -->
-      <nav class="navbar-links" aria-label="Main navigation">
-        <a href="#">Home</a>
-        <a href="#">Docs</a>
-        <a href="#">GitHub</a>
+    <!-- Menu Toggle -->
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Navigation Links -->
+    <nav class="navbar-links" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#">Docs</a>
+      <a href="#">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- Layout -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2 class="side-header">
+          <i class="fa-solid fa-layer-group"></i>Categories
+        </h2>
+        <i class="fa-solid fa-xmark toggle-btn"></i>
+      </div>
+      <nav>
+        <a href="#" data-target="home" class="active"><i class="fa-solid fa-home"></i><span> Home</span></a>
+        <a href="#" data-target="navbars"><i class="fa-solid fa-bars"></i><span> Navbars</span></a>
+        <a href="#" data-target="heroes"><i class="fa-solid fa-image"></i><span> Hero Sections</span></a>
+        <a href="#" data-target="footers"><i class="fa-solid fa-shoe-prints"></i><span> Footers</span></a>
       </nav>
-    </header>
+    </aside>
 
-    <!-- Layout -->
-    <div class="layout">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="sidebar-header">
-          <h2 class="side-header">
-            <i class="fa-solid fa-layer-group"></i>Categories
-          </h2>
-          <i class="fa-solid fa-xmark toggle-btn"></i>
-        </div>
-        <nav>
-          <a href="#" data-target="home" class="active"
-            ><i class="fa-solid fa-home"></i><span> Home</span></a
-          >
-          <a href="#" data-target="navbars"
-            ><i class="fa-solid fa-bars"></i><span> Navbars</span></a
-          >
-          <a href="#" data-target="heroes"
-            ><i class="fa-solid fa-image"></i><span> Hero Sections</span></a
-          >
-          <a href="#" data-target="footers"
-            ><i class="fa-solid fa-shoe-prints"></i><span> Footers</span></a
-          >
-        </nav>
-      </aside>
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Home Section -->
+      <section id="home" class="page-section active">
+        <h2>Welcome to Web Templates Store</h2>
+        <p>Select a category from the sidebar to see templates.</p>
+        <button class="explore-btn">Explore Templates</button>
 
-      <!-- Main Content -->
-      <main class="main">
-        <!-- Home Section -->
-        <section id="home" class="page-section active">
-          <h2>Welcome to Web Templates Store</h2>
-          <p>Select a category from the sidebar to see templates.</p>
-          <button class="explore-btn">Explore Templates</button>
-
-          <!-- Templates Grid -->
-          <div id="templatesSection" class="grid hidden">
-            <!-- Example Template Card -->
-            <article class="card">
-              <img
-                src="assets/previews/navbar-preview.jpg"
-                alt="Navbar Template"
-              />
-              <div class="card-content">
-                <h3>Navbar Template</h3>
-                <p>Clean and responsive navigation bar design.</p>
-                <div class="btn-group">
-                  <button
-                    class="btn"
-                    onclick="openPreview('navbars/templete_01.html')"
-                  >
-                    <i class="fa-solid fa-eye"></i> Preview
-                  </button>
-                  <a href="#" class="btn" target="_blank"
-                    ><i class="fa-solid fa-up-right-from-square"></i> Live</a
-                  >
-                </div>
+        <!-- Templates Grid -->
+        <div id="templatesSection" class="grid hidden">
+          <!-- Example Template Card -->
+          <article class="card">
+            <img src="assets/previews/navbar-preview.jpg" alt="Navbar Template" />
+            <div class="card-content">
+              <h3>Navbar Template</h3>
+              <p>Clean and responsive navigation bar design.</p>
+              <div class="btn-group">
+                <button class="btn" onclick="openPreview('navbars/templete_01.html')">
+                  <i class="fa-solid fa-eye"></i> Preview
+                </button>
+                <a href="#" class="btn" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> Live</a>
               </div>
-            </article>
-            <!-- Add rest of your cards here -->
-          </div>
-        </section>
+            </div>
+          </article>
+          <!-- Add rest of your cards here -->
+        </div>
+      </section>
 
-        <!-- Navbars Section -->
-        <section id="navbars" class="page-section">
-          <div class="grid">
-            <article class="card">
-              <img
-                src="assets/previews/navbar-preview.jpg"
-                alt="Navbar Template 01"
-              />
-              <div class="card-content">
-                <h3>Template 01</h3>
-                <p>
-                  Minimalistic navbar with left-aligned logo and right-side menu
-                  links.
-                </p>
-                <div class="btn-group">
-                  <button
-                    class="btn"
-                    onclick="openPreview('navbars/templete_01.html')"
-                  >
-                    <i class="fa-solid fa-eye"></i> Preview
-                  </button>
-                  <a
-                    class="btn"
-                    href="navbars/templete_01.html"
-                    target="_blank"
-                  >
-                    <i class="fa-solid fa-up-right-from-square"></i> Live
-                  </a>
-                </div>
+      <!-- Navbars Section -->
+      <section id="navbars" class="page-section">
+        <div class="grid">
+          <article class="card">
+            <img src="assets/previews/navbar-preview.jpg" alt="Navbar Template 01" />
+            <div class="card-content">
+              <h3>Template 01</h3>
+              <p>
+                Minimalistic navbar with left-aligned logo and right-side menu
+                links.
+              </p>
+              <div class="btn-group">
+                <button class="btn" onclick="openPreview('navbars/templete_01.html')">
+                  <i class="fa-solid fa-eye"></i> Preview
+                </button>
+                <a class="btn" href="navbars/templete_01.html" target="_blank">
+                  <i class="fa-solid fa-up-right-from-square"></i> Live
+                </a>
               </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- Hero Sections -->
-        <section id="heroes" class="page-section">
-          <h2>Hero Sections</h2>
-          <p>Coming soon: modern hero section templates.</p>
-        </section>
-
-        <!-- Footers -->
-        <section id="footers" class="page-section">
-          <h2>Footers</h2>
-          <p>Coming soon: stylish footer templates.</p>
-        </section>
-      </main>
-
-      <!-- Right Preview Panel -->
-      <aside class="preview-panel" id="previewPanel" aria-label="Live preview">
-        <div class="preview-header">
-          <span><i class="fa-solid fa-display"></i> Template Preview</span>
-          <button class="cancel-btn" onclick="closePreview()">
-            <i class="fa-solid fa-xmark"></i> Back
-          </button>
+            </div>
+          </article>
         </div>
-        <div class="preview-content">
-          <iframe
-            id="previewFrame"
-            src=""
-            title="Template preview frame"
-          ></iframe>
-        </div>
-      </aside>
-    </div>
-<script src="script.js"></script>
+      </section>
 
-  </body>
+      <!-- Hero Sections -->
+      <section id="heroes" class="page-section">
+        <h2>Hero Sections</h2>
+        <p>Coming soon: modern hero section templates.</p>
+      </section>
+
+      <!-- Footers -->
+      <section id="footers" class="page-section">
+        <h2>Footers</h2>
+        <p>Coming soon: stylish footer templates.</p>
+      </section>
+    </main>
+
+    <!-- Right Preview Panel -->
+    <aside class="preview-panel" id="previewPanel" aria-label="Live preview">
+      <div class="preview-header">
+        <span><i class="fa-solid fa-display"></i> Template Preview</span>
+        <button class="cancel-btn" onclick="closePreview()">
+          <i class="fa-solid fa-xmark"></i> Back
+        </button>
+      </div>
+      <div class="preview-content">
+        <iframe id="previewFrame" src="" title="Template preview frame"></iframe>
+      </div>
+    </aside>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
 </html>
