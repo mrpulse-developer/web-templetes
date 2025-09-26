@@ -150,7 +150,7 @@
             nav ul.show,
             .right-btn.show {
                 display: flex;
-                align-items: center;
+                /* align-items: center; */
             }
 
             nav ul li a {
@@ -158,7 +158,11 @@
             }
 
             .right-btn {
-                align-items: flex-start;
+                /* display: flex; */
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                text-align: center;
             }
         }
     </style>
@@ -186,7 +190,7 @@
             <!-- Buttons -->
             <div class="right-btn">
                 <button class="login-btn btn">Login</button>
-                <button class="signup-btn btn">Free Sign Up</button>
+                <button class="signup-btn btn">Sign Up</button>
             </div>
 
             <!-- Toggle -->
