@@ -1,78 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Templates Store</title>
 
-    <!-- SEO -->
-    <meta name="description" content="A collection of clean, reusable, and responsive HTML, CSS, and JS templates.">
-    <meta name="author" content="Mr Pulse">
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+<link rel="stylesheet" href="style.css">
+   
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <h1>🌐 Web Templates</h1>
 
-    <title>Web Templates - Store</title>
+      <!-- Search Form -->
+      <form class="search-bar" role="search">
+        <label for="searchInput" class="visually-hidden">Search templates</label>
+        <input
+          type="search"
+          id="searchInput"
+          name="q"
+          placeholder="Search templates..."
+        />
+        <button type="submit" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+      <!-- Navigation Links -->
+      <nav class="navbar-links" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">Docs</a>
+        <a href="#">GitHub</a>
+      </nav>
+    </header>
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background: #f9f9f9; 
-            color: #333; 
-            padding: 2rem;
-        }
-        h1 { text-align: center; margin-bottom: 2rem; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .card {
-            background: white;
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .card h2 { font-size: 1.1rem; }
-        .card a {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: #007bff;
-            color: white;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 0.9rem;
-            transition: background 0.2s ease;
-        }
-        .card a:hover { background: #0056b3; }
-    </style>
-</head>
-<body>
+    <!-- Layout -->
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Template categories">
+        <h2>Categories</h2>
+        <nav>
+          <a href="#" data-target="home" class="active"
+            ><i class="fa-solid fa-home"></i> Home</a
+          >
+          <a href="#" data-target="navbars"
+            ><i class="fa-solid fa-bars"></i> Navbars</a
+          >
+          <a href="#" data-target="heroes"
+            ><i class="fa-solid fa-image"></i> Hero Sections</a
+          >
+          <a href="#" data-target="footers"
+            ><i class="fa-solid fa-shoe-prints"></i> Footers</a
+          >
+        </nav>
+      </aside>
 
-    <h1>🌐 Web Templates Store</h1>
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+          <h2>Welcome to Web Templates Store</h2>
+          <p>Select a category from the sidebar to see templates.</p>
+        </section>
 
-    <div class="grid">
-        <!-- Navbar Template -->
-        <div class="card">
-            <h2>Navbar Template 01</h2>
-            <a href="navbars/templates_01.html" target="_blank">Live Preview</a>
-            <a href="https://github.com/mrpulse-developer/web-templetes/commit/a4323bf8f89ab1e0035660f416c5cded3adba54d#diff-ecd6978d78a704061e0eb86f8833a9f9fe3d3dffa272ab6c29664ab38b219d95" target="_blank" style="background:#444;">View Code</a>
+        <!-- Navbars Section -->
+        <section id="navbars" class="page-section">
+          <div class="grid">
+            <article class="card">
+              <img
+                src="assets/previews/navbar-preview.jpg"
+                alt="Navbar Template 01"
+              />
+              <div class="card-content">
+                <h3>Template 01</h3>
+                <p>
+                  Minimalistic navbar with left-aligned logo and right-side menu
+                  links.
+                </p>
+                <div class="btn-group">
+                  <button
+                    class="btn"
+                    onclick="openPreview('navbars/templete_01.html')"
+                  >
+                    <i class="fa-solid fa-eye"></i> Preview
+                  </button>
+                  <a
+                    class="btn"
+                    href="navbars/templete_01.html"
+                    target="_blank"
+                  >
+                    <i class="fa-solid fa-up-right-from-square"></i> Live
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/previews/navbar-preview2.jpg"
+                alt="Navbar Template 02"
+              />
+              <div class="card-content">
+                <h3>Template 02</h3>
+                <p>
+                  Centered logo navbar with hover effects and smooth animations.
+                </p>
+                <div class="btn-group">
+                  <button
+                    class="btn"
+                    onclick="openPreview('navbars/templete_02.html')"
+                  >
+                    <i class="fa-solid fa-eye"></i> Preview
+                  </button>
+                  <a
+                    class="btn"
+                    href="navbars/templete_02.html"
+                    target="_blank"
+                  >
+                    <i class="fa-solid fa-up-right-from-square"></i> Live
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Hero Sections -->
+        <section id="heroes" class="page-section">
+          <h2>Hero Sections</h2>
+          <p>Coming soon: modern hero section templates.</p>
+        </section>
+
+        <!-- Footers -->
+        <section id="footers" class="page-section">
+          <h2>Footers</h2>
+          <p>Coming soon: stylish footer templates.</p>
+        </section>
+      </main>
+
+      <!-- Right Preview Panel -->
+      <aside class="preview-panel" id="previewPanel" aria-label="Live preview">
+        <div class="preview-header">
+          <span><i class="fa-solid fa-display"></i> Template Preview</span>
+          <button class="cancel-btn" onclick="closePreview()">
+            <i class="fa-solid fa-xmark"></i> Back
+          </button>
         </div>
-
-        <!-- Add More Templates Below -->
-        <!-- Example:
-        <div class="card">
-            <h2>Hero Template 01</h2>
-            <a href="./hero/hero-01.html" target="_blank">Live Preview</a>
-            <a href="https://github.com/mrpulse-developer/web-templetes/blob/main/hero/hero-01.html" target="_blank" style="background:#444;">View Code</a>
+        <div class="preview-content">
+          <iframe
+            id="previewFrame"
+            src=""
+            title="Template preview frame"
+          ></iframe>
         </div>
-        -->
+      </aside>
     </div>
 
-</body>
+    <script>
+      // Preview Panel
+      function openPreview(liveUrl) {
+        document.getElementById("previewPanel").classList.add("open");
+        document.getElementById("previewFrame").src = liveUrl;
+      }
+      function closePreview() {
+        document.getElementById("previewPanel").classList.remove("open");
+        document.getElementById("previewFrame").src = "";
+      }
+
+      // Sidebar Section Switching
+      const links = document.querySelectorAll(".sidebar nav a");
+      const sections = document.querySelectorAll(".page-section");
+
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Remove active class from all links
+          links.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+
+          const targetId = link.getAttribute("data-target");
+
+          // hide all sections
+          sections.forEach((sec) => sec.classList.remove("active"));
+
+          // show target section
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
