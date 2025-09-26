@@ -16,9 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       crossorigin="anonymous"
     />
-<link rel="stylesheet" href="style.css">
-   
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Navbar -->
     <header class="navbar">
@@ -26,7 +26,9 @@
 
       <!-- Search Form -->
       <form class="search-bar" role="search">
-        <label for="searchInput" class="visually-hidden">Search templates</label>
+        <label for="searchInput" class="visually-hidden"
+          >Search templates</label
+        >
         <input
           type="search"
           id="searchInput"
@@ -37,6 +39,11 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
+
+      <!-- Menu Toggle -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
       <!-- Navigation Links -->
       <nav class="navbar-links" aria-label="Main navigation">
@@ -49,20 +56,25 @@
     <!-- Layout -->
     <div class="layout">
       <!-- Sidebar -->
-      <aside class="sidebar" aria-label="Template categories">
-        <h2>Categories</h2>
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2 class="side-header">
+            <i class="fa-solid fa-layer-group"></i>Categories
+          </h2>
+          <i class="fa-solid fa-xmark toggle-btn"></i>
+        </div>
         <nav>
           <a href="#" data-target="home" class="active"
-            ><i class="fa-solid fa-home"></i> Home</a
+            ><i class="fa-solid fa-home"></i><span> Home</span></a
           >
           <a href="#" data-target="navbars"
-            ><i class="fa-solid fa-bars"></i> Navbars</a
+            ><i class="fa-solid fa-bars"></i><span> Navbars</span></a
           >
           <a href="#" data-target="heroes"
-            ><i class="fa-solid fa-image"></i> Hero Sections</a
+            ><i class="fa-solid fa-image"></i><span> Hero Sections</span></a
           >
           <a href="#" data-target="footers"
-            ><i class="fa-solid fa-shoe-prints"></i> Footers</a
+            ><i class="fa-solid fa-shoe-prints"></i><span> Footers</span></a
           >
         </nav>
       </aside>
@@ -73,6 +85,34 @@
         <section id="home" class="page-section active">
           <h2>Welcome to Web Templates Store</h2>
           <p>Select a category from the sidebar to see templates.</p>
+          <button class="explore-btn">Explore Templates</button>
+
+          <!-- Templates Grid -->
+          <div id="templatesSection" class="grid hidden">
+            <!-- Example Template Card -->
+            <article class="card">
+              <img
+                src="assets/previews/navbar-preview.jpg"
+                alt="Navbar Template"
+              />
+              <div class="card-content">
+                <h3>Navbar Template</h3>
+                <p>Clean and responsive navigation bar design.</p>
+                <div class="btn-group">
+                  <button
+                    class="btn"
+                    onclick="openPreview('navbars/templete_01.html')"
+                  >
+                    <i class="fa-solid fa-eye"></i> Preview
+                  </button>
+                  <a href="#" class="btn" target="_blank"
+                    ><i class="fa-solid fa-up-right-from-square"></i> Live</a
+                  >
+                </div>
+              </div>
+            </article>
+            <!-- Add rest of your cards here -->
+          </div>
         </section>
 
         <!-- Navbars Section -->
@@ -99,34 +139,6 @@
                   <a
                     class="btn"
                     href="navbars/templete_01.html"
-                    target="_blank"
-                  >
-                    <i class="fa-solid fa-up-right-from-square"></i> Live
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card">
-              <img
-                src="assets/previews/navbar-preview2.jpg"
-                alt="Navbar Template 02"
-              />
-              <div class="card-content">
-                <h3>Template 02</h3>
-                <p>
-                  Centered logo navbar with hover effects and smooth animations.
-                </p>
-                <div class="btn-group">
-                  <button
-                    class="btn"
-                    onclick="openPreview('navbars/templete_02.html')"
-                  >
-                    <i class="fa-solid fa-eye"></i> Preview
-                  </button>
-                  <a
-                    class="btn"
-                    href="navbars/templete_02.html"
                     target="_blank"
                   >
                     <i class="fa-solid fa-up-right-from-square"></i> Live
@@ -167,42 +179,7 @@
         </div>
       </aside>
     </div>
+<script src="script.js"></script>
 
-    <script>
-      // Preview Panel
-      function openPreview(liveUrl) {
-        document.getElementById("previewPanel").classList.add("open");
-        document.getElementById("previewFrame").src = liveUrl;
-      }
-      function closePreview() {
-        document.getElementById("previewPanel").classList.remove("open");
-        document.getElementById("previewFrame").src = "";
-      }
-
-      // Sidebar Section Switching
-      const links = document.querySelectorAll(".sidebar nav a");
-      const sections = document.querySelectorAll(".page-section");
-
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          // Remove active class from all links
-          links.forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-
-          const targetId = link.getAttribute("data-target");
-
-          // hide all sections
-          sections.forEach((sec) => sec.classList.remove("active"));
-
-          // show target section
-          const targetSection = document.getElementById(targetId);
-          if (targetSection) {
-            targetSection.classList.add("active");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
