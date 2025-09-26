@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <meta name="description" content="A collection of clean, reusable, and responsive HTML, CSS, and JS templates.">
+    <meta name="author" content="Mr Pulse">
+
+    <title>Web Templates - Store</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: #f9f9f9; 
+            color: #333; 
+            padding: 2rem;
+        }
+        h1 { text-align: center; margin-bottom: 2rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .card h2 { font-size: 1.1rem; }
+        .card a {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+        .card a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <h1>🌐 Web Templates Store</h1>
+
+    <div class="grid">
+        <!-- Navbar Template -->
+        <div class="card">
+            <h2>Navbar Template 01</h2>
+            <a href="./navbars/templete_01.html" target="_blank">Live Preview</a>
+            <a href="https://github.com/mrpulse-developer/web-templetes/blob/main/navbars/templete_01.html" target="_blank" style="background:#444;">View Code</a>
+        </div>
+
+        <!-- Add More Templates Below -->
+        <!-- Example:
+        <div class="card">
+            <h2>Hero Template 01</h2>
+            <a href="./hero/hero-01.html" target="_blank">Live Preview</a>
+            <a href="https://github.com/mrpulse-developer/web-templetes/blob/main/hero/hero-01.html" target="_blank" style="background:#444;">View Code</a>
+        </div>
+        -->
+    </div>
+
+</body>
+</html>
