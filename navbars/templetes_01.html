@@ -1,227 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- SEO -->
     <meta name="description" content="Template description here" />
     <meta name="author" content="Mr Pulse" />
+    <title>Responsive Navbar</title>
 
-    <title>My Website Navbar Template</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f9f9f9;
-        color: #333;
-      }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
 
-      /* Navbar */
-      header {
-        background: linear-gradient(90deg, #333, #111);
-        /* gradient */
-        color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
+        /* Navbar */
+        header {
+            background: linear-gradient(90deg, #333, #111);
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-      header nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        padding: 12px 25px;
-      }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            position: relative;
+        }
 
-      /* Logo */
-      header nav .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-      }
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-      header nav .logo img {
-        height: 55px;
-        width: 55px;
-        border-radius: 50%;
-        border: 2px solid #f7759e;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-        cursor: pointer;
-      }
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 2px solid #f7759e;
+        }
 
-      header nav .logo img:hover {
-        transform: scale(1.1);
-        border-color: #ffb3c6;
-      }
+        .logo span {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f7759e;
+        }
 
-      /* Logo text */
-      /* Logo text */
-      header nav .logo span {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #f7759e;
-        letter-spacing: 1px;
-        transition: color 0.3s ease;
-      }
+        /* Links */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
 
-      header nav .logo span:hover {
-        color: #fff;
-      }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-      header nav .logo span:hover {
-        color: #fff;
-      }
+        nav ul li a:hover {
+            color: #f7759e;
+        }
 
-      /* Navbar Links */
-      header nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-      }
+        /* Buttons */
+        .btn {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+        }
 
-      header nav ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 6px 10px;
-        border-radius: 6px;
-        transition: all 0.3s ease-in-out;
-      }
+        .login-btn {
+            background: transparent;
+            border: 2px solid #f7759e;
+            color: #f7759e;
+        }
 
-      header nav ul li a:hover {
-        background: #f7759e;
-        color: #fff;
-        box-shadow: 0 4px 10px rgba(247, 117, 158, 0.5);
-      }
+        .login-btn:hover {
+            background: #f7759e;
+            color: #fff;
+        }
 
-      /* Buttons */
-      .btn {
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        font-weight: 700;
-        border: none;
-        transition: all 0.3s ease-in-out;
-      }
+        .signup-btn {
+            background: #f7759e;
+            color: #fff;
+            margin-left: 10px;
+            border: 2px solid #f7759e;
+        }
 
-      .login-btn {
-        background: transparent;
-        border: 2px solid #f7759e;
-        color: #f7759e;
-      }
+        .signup-btn:hover {
+            background: #ff4f88;
+            border-color: #ff4f88;
+        }
 
-      .login-btn:hover {
-        background: #f7759e;
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(247, 117, 158, 0.4);
-      }
-
-      .signup-btn {
-        background: #f7759e;
-        color: #fff;
-        border: 2px solid #f7759e;
-        margin-left: 10px;
-      }
-
-      .signup-btn:hover {
-        background: #ff4f88;
-        border-color: #ff4f88;
-        box-shadow: 0 4px 12px rgba(255, 79, 136, 0.4);
-      }
-      /* Menu toggle (mobile ke liye) */
-      .menu-toggle {
-        display: none; /* desktop me hidden */
-        font-size: 1.6rem;
-        background: none;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-      }
-
-      /* Mobile breakpoint */
-      @media (max-width: 768px) {
+        /* Toggle (mobile) */
         .menu-toggle {
-          display: block; /* mobile me show */
+            display: none;
+            font-size: 1.6rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
         }
 
-        header nav ul {
-          display: none; /* menu hidden by default */
-          flex-direction: column;
-          background: #222;
-          position: absolute;
-          top: 70px;
-          right: 10px;
-          padding: 1rem;
-          border-radius: 8px;
-        }
+        /* Responsive */
+        @media(max-width:768px) {
+            nav {
+                flex-wrap: wrap;
+            }
 
-        header nav ul.show {
-          display: flex; /* toggle hone par show */
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul,
+            .right-btn {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #222;
+                border-radius: 8px;
+                padding: 1rem;
+                margin-top: 10px;
+                gap: 1rem;
+            }
+
+            nav ul.show,
+            .right-btn.show {
+                display: flex;
+                align-items: center;
+            }
+
+            nav ul li a {
+                font-size: 1.1rem;
+            }
+
+            .right-btn {
+                align-items: flex-start;
+            }
         }
-      }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav>
-        <div class="logo">
-          <img
-            src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg?semt=ais_hybrid&w=740&q=80"
-            alt="Logo"
-          /><span>Mr Pulse</span>
-        </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Our Services</a></li>
-        </ul>
-        <div class="right-btn">
-          <button class="login-btn btn">Login</button>
-          <button class="signup-btn btn">Free Sign Up</button>
-        </div>
-        <!-- Menu Toggle Button -->
-        <button class="menu-toggle" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </nav>
+        <nav>
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg"
+                    alt="Logo" />
+                <span>Mr Pulse</span>
+            </div>
+
+            <!-- Links -->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+
+            <!-- Buttons -->
+            <div class="right-btn">
+                <button class="login-btn btn">Login</button>
+                <button class="signup-btn btn">Free Sign Up</button>
+            </div>
+
+            <!-- Toggle -->
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </nav>
     </header>
-    <!-- <script src="js/main.js"></script> -->
+
     <script>
-      const toggleBtn = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector("header nav ul");
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector("nav ul");
+        const rightBtns = document.querySelector(".right-btn");
 
-      toggleBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
+        toggleBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            rightBtns.classList.toggle("show");
 
-        // icon change karna ho to
-        const icon = toggleBtn.querySelector("i");
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-xmark");
-      });
+            const icon = toggleBtn.querySelector("i");
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+        });
     </script>
-  </body>
+</body>
+
 </html>
